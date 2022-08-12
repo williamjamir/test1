@@ -25,10 +25,7 @@
   "separateMajorMinor": false,
   "separateMultipleMajor": true,
   "packageRules": [
-     "matchDatasources": [
-        "python",
-        "git-tags"
-      ],
+    { "matchDatasources": ["python","git-tags"]},
     {
       "groupName": "Python",
       "matchPaths": [

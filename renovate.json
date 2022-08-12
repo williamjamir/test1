@@ -6,9 +6,7 @@
   ],
   "description": "A base Renovate preset for python projects",
   "timezone": "Europe/Berlin",
-  "schedule": [
-    "before 7am on tuesday"
-  ],
+  "schedule": ["at any time"],
   "automergeSchedule": [
     "before 9am on tuesday"
   ],

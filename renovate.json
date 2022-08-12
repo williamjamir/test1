@@ -1,9 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>adjust/renovate-config",
+    "config:base",
+    ":semanticCommits",
+    ":disableDependencyDashboard",
     ":preserveSemverRanges"
   ],
+  "updateLockFiles": true,
+  "separateMultipleMajor": true,
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "schedule": ["before 7am on monday"],
+  "commitBodyTable": true,
+  "rebaseWhen": "behind-base-branch",
+  "rollbackPrs": true,
+  "prConcurrentLimit": 5,
+  "labels": [
+    "dependencies"
+  ]
   "description": "A base Renovate preset for python projects",
   "timezone": "Europe/Berlin",
   "schedule": ["at any time"],

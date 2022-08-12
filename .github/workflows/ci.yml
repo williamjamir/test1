@@ -21,4 +21,4 @@ jobs:
         run: npm install renovate
 
       - name: Trigger renovate manually (in order to evalute cc-tool packges)
-        run: npx renovate --token ${{ secrets.RENOVATE_TOKEN }} adjust/etl-processing-service
+        run: npx renovate --token ${{ secrets.RENOVATE_TOKEN }} williamjamir/test1

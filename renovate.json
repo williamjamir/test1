@@ -11,7 +11,7 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "schedule": ["before 7am on monday"],
+  "schedule": ["at any time"],
   "commitBodyTable": true,
   "rebaseWhen": "behind-base-branch",
   "rollbackPrs": true,
@@ -21,10 +21,6 @@
   ]
   "description": "A base Renovate preset for python projects",
   "timezone": "Europe/Berlin",
-  "schedule": ["at any time"],
-  "automergeSchedule": [
-    "before 9am on tuesday"
-  ],
   "enabledManagers": [
     "pip_requirements",
     "github-actions"
@@ -36,7 +32,6 @@
     ]
   },
   "separateMajorMinor": false,
-  "separateMultipleMajor": true,
   "packageRules": [
     { "matchDatasources": ["python","git-tags"]},
     {

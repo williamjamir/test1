@@ -1,10 +1,88 @@
+// 20220812104953
+// https://raw.githubusercontent.com/adjust/renovate-config/master/backend.json?token=GHSAT0AAAAAABQ2HYAIRRGYTD3IDOIF4QLQYXWEJAQ
+
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "local>adjust/renovate-config:backend"
+    "local>adjust/renovate-config",
+    ":preserveSemverRanges"
   ],
+  "description": "A base Renovate preset for python projects",
+  "timezone": "Europe/Berlin",
+  "schedule": [
+    "before 7am on tuesday"
+  ],
+  "automergeSchedule": [
+    "before 9am on tuesday"
+  ],
+  "enabledManagers": [
+    "pip_requirements",
+    "github-actions"
+  ],
+  "pip_requirements": {
+    "fileMatch": [
+      "requirements.txt",
+      "requirements-dev.txt"
+    ]
+  },
+  "separateMajorMinor": false,
+  "separateMultipleMajor": true,
   "packageRules": [
-    {"matchPackageNames": ["prefect"], "allowedVersions": "<2"},
-    {"matchPackageNames": ["postgres"], "replacementVersion": "<15"}
+     "matchDatasources": [
+        "python",
+        "git-tags"
+      ],
+    {
+      "groupName": "Python",
+      "matchPaths": [
+        "requirements.txt"
+      ],
+      "rangeStrategy": "replace",
+      "automerge": false
+    },
+    {
+      "groupName": "Python Dev",
+      "matchPaths": [
+        "requirements-dev.txt"
+      ],
+      "rangeStrategy": "replace",
+      "automerge": true
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "rangeStrategy": "replace",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": [
+        "newrelic"
+      ],
+      "allowedVersions": "<=7.10.0.175",
+      "description": "We had an issue with 7.16.0.178, let's keep it pinned for a few weeks"
+    },
+    {
+      "matchPackageNames": [
+        "uvicorn"
+      ],
+      "allowedVersions": "<0.18.0",
+      "description": "https://github.com/tiangolo/fastapi/blob/master/pyproject.toml#L99"
+    },
+    {
+      "matchPackageNames": [
+        "aioredis"
+      ],
+      "allowedVersions": "<2.0.0",
+      "description": "arq v0.23: https://github.com/samuelcolvin/arq/releases"
+    },
+    {
+      "matchPackageNames": [
+        "redis"
+      ],
+      "allowedVersions": "<4.0.0",
+      "description": "arq v0.23: https://github.com/samuelcolvin/arq/releases"
+    }
   ]
 }

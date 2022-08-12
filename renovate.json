@@ -5,6 +5,6 @@
   ],
   "packageRules": [
     {"matchPackageNames": ["prefect"], "allowedVersions": "<2"},
-    {"matchPackageNames": ["postgres"], "allowedVersions": "<15"}
+    {"matchPackageNames": ["postgres"], "replacementVersion": "<15"}
   ]
 }

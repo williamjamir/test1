@@ -18,7 +18,7 @@
   "prConcurrentLimit": 5,
   "labels": [
     "dependencies"
-  ]
+  ],
   "description": "A base Renovate preset for python projects",
   "timezone": "Europe/Berlin",
   "enabledManagers": [

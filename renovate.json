@@ -1,6 +1,3 @@
-// 20220812104953
-// https://raw.githubusercontent.com/adjust/renovate-config/master/backend.json?token=GHSAT0AAAAAABQ2HYAIRRGYTD3IDOIF4QLQYXWEJAQ
-
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [

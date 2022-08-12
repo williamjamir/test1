@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "local>adjust/renovate-config:backend"
+  ],
+  "packageRules": [
+    {"matchPackageNames": ["prefect"], "allowedVersions": "<2"},
+    {"matchPackageNames": ["postgres"], "allowedVersions": "<15"}
+  ]
+}

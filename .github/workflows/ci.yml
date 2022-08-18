@@ -1,7 +1,7 @@
 name: Update requirements
 
 on:
-  pull_request:  # TODO(william) remove this line when PR is ready 
+  pull_request:  # TODO(william) remove this line when PR is ready  
   push:
    #- cron: '0 9 * * 5'  #  every friday at 9 a.m.
 

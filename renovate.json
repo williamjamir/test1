@@ -79,6 +79,7 @@
       "allowedVersions": "<2.0.0",
       "description": "arq v0.23: https://github.com/samuelcolvin/arq/releases"
     },
+    {"matchPackageNames": ["postgres"], "allowedVersions": "<13", "description": "We have PostgreSQL 12 installed on servers"},
     {
       "matchPackageNames": [
         "redis"

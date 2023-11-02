@@ -1,7 +1,6 @@
 name: Update requirements
 
 on:
-  pull_request:  # TODO(william) remove this line when PR is ready  
   push:
    #- cron: '0 9 * * 5'  #  every friday at 9 a.m.
 
@@ -24,9 +23,4 @@ jobs:
 
       - name: Install dependencies
         run: npm install renovate
-
-      - name: Trigger renovate manually (in order to evalute cc-tool packges)
-        run: npx renovate --token ${{ secrets.RENOVATE_TOKEN }} williamjamir/test1 --log-file renovate.log --log-file-level DEBUG
-      - name: test
-        run: cat renovate.log
         

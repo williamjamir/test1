@@ -2,15 +2,13 @@ name: Update requirements
 
 on:
   push:
-   #- cron: '0 9 * * 5'  #  every friday at 9 a.m.
-
-
 
 jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-
+    
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/workflows/check.yml
         

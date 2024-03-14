@@ -8,6 +8,7 @@ jobs:
   ssome-linters:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Run TESTS
         run: |
           echo "MY TESTS" 

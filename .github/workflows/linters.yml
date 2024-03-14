@@ -7,7 +7,9 @@ jobs:
 
   ssome-linters:
     runs-on: ubuntu-latest
+    
     steps:
+      - uses: actions/checkout@v4
       - name: Run LINTER
         run: |
             echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"

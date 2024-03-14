@@ -20,3 +20,13 @@ jobs:
       - name: Run something
         run: |
           echo "my test" 
+  
+  final_message:
+    needs: [linters]
+    if: github.event_name == 'push' && failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hi
+        run: | 
+          echo "Execute with failure"
+          echo ${{ job.status }}

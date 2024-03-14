@@ -15,8 +15,3 @@ jobs:
             echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"
             exit 1
 
-      - name: Something
-        if: github.event_name == 'push' && failure()
-        run: | 
-            echo "Execute with failure"
-            echo ${{ job.status }}

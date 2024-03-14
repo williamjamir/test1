@@ -4,10 +4,7 @@ on:
   push:
 
 jobs:
-  update:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    
+
   check: 
     uses: ./.github/workflows/check.yml
       

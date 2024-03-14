@@ -13,5 +13,7 @@ jobs:
       - name: Run LINTER
         run: |
             echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"
-            exit 1
-
+      - name: Hi
+        run: | 
+          echo "Execute with failure"
+          echo ${{ job.status }}

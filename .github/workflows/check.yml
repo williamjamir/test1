@@ -1,0 +1,22 @@
+name: Check
+
+on:
+  workflow_call:
+    
+jobs:
+
+  setup:
+    uses: ./.github/workflows/setup.yml
+  linters:
+    needs: [setup]
+    uses: ./.github/workflows/linters.yml
+  tests:
+    needs: [setup]
+    uses: ./.github/workflows/tests.yml
+  some-check:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run something
+        run: |
+          echo "my test" 

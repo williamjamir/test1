@@ -1,0 +1,20 @@
+name: Check
+
+on:
+  workflow_call:
+    
+jobs:
+
+  ssome-linters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run LINTER
+        run: |
+            echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"
+            exit 1
+
+      - name: Something
+        if: github.event_name == 'push' && failure()
+        run: | 
+            echo "Execute with failure"
+            echo ${{ job.status }}

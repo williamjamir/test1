@@ -10,17 +10,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    
-    services:
-      postgres:
-        image: postgres:16.0-alpine
-        
-        
-    steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
 
-      - name: Install dependencies
-        run: npm install renovate
+    steps:
+      - uses: ./.github/workflows/check.yml
         

@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run LINTER
         run: |
-            echo "::error file={name},line={line},endLine={endLine},title={title}::{message}"
+            echo "::error file=MYFILE,line=10,endLine=10,title=TITLE::MESSAGE"
       - name: Hi
         run: | 
           echo "Execute with failure"

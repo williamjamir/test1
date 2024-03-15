@@ -25,6 +25,9 @@ jobs:
         with: 
           virtualenvs-create: false
       - run: ls -lah  ~/.local
+      - run: ls -lah  ~/.local/bin
+      - run: ls -lah  ~/.local/venv
+      - run: ls -lah  ~/.local/share
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'

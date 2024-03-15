@@ -5,10 +5,8 @@ on:
     
 jobs:
 
-  setup:
-    uses: ./.github/workflows/setup.yml
+
   some-check:
-    needs: [setup]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

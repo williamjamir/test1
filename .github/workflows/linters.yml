@@ -1,0 +1,19 @@
+name: Check
+
+on:
+  workflow_call:
+    
+jobs:
+
+  ssome-linters:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LINTER
+        run: |
+            exit 1 
+      - name: Hi
+        run: | 
+          echo "Execute with failure"
+          echo ${{ job.status }}

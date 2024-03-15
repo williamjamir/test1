@@ -7,26 +7,17 @@ jobs:
 
   setup:
     uses: ./.github/workflows/setup.yml
-  linters:
-    needs: [setup]
-    uses: ./.github/workflows/linters.yml
-  tests:
-    needs: [setup]
-    uses: ./.github/workflows/tests.yml
   some-check:
     needs: [setup]
     runs-on: ubuntu-latest
     steps:
-      - name: Run something
-        run: |
-          echo "my test" 
+      - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+          cache: 'poetry'
+      - run: poetry install
+      - run: poetry run pytest 
   
-  final_message:
-    needs: [linters]
-    if: github.event_name == 'push' && failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hi
-        run: | 
-          echo "Execute with failure"
-          echo ${{ job.status }}

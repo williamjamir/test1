@@ -17,18 +17,17 @@ jobs:
           path: |
               ~/.local
               ${{ env.pythonLocation }}
-          key: ${{ env.pythonLocation }}-${{ hashFiles('requirements**.txt', 'poetry.lock') }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('poetry.lock') }}
           
       - name: Install poetry
         if: ${{ hashFiles('poetry.lock') != '' }} && steps.cached-poetry.outputs.cache-hit != 'true'
         uses: snok/install-poetry@v1.3.4
         with: 
           virtualenvs-create: false
-          
+      - run: ls -lah  ~/.local
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'poetry'
           
       - run: poetry install
       - run: poetry run pytest 

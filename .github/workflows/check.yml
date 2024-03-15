@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - uses: actions/cache@v4
         id: cache-venv
         with:
@@ -24,13 +26,12 @@ jobs:
         uses: snok/install-poetry@v1.3.4
         with: 
           virtualenvs-create: false
+          
       - run: ls -lah  ~/.local
       - run: ls -lah  ~/.local/bin
       - run: ls -lah  ~/.local/venv
       - run: ls -lah  ~/.local/share
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+
           
       - run: poetry install
       - run: poetry run pytest 

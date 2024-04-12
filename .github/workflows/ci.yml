@@ -26,13 +26,12 @@ jobs:
           echo "Is synced: ${is_production_synced_with_develop}"
           
           deploy_environments=""
-          if [[ $is_develop == true ]]; then
-            deploy_environments="staging"
-          elif [[ $is_prod == true ]] && [[ -n $changes ]]; then
-            deploy_environments="${{ inputs.production_environments }}"
-          elif [[ $is_prod == true ]] && [[ -z $changes ]]; then
-            echo "::error::Cannot deploy out of sync production branch to production environments: ${{ inputs.production_environments }}"
-          fi
+          if [[ $is_develop_branch == true ]]; then
+              deploy_environments="staging"
+          elif [[ $is_production_branch == true ]] && [[ -n $is_production_synced_with_develop ]]; then
+              deploy_environments="${{ inputs.production_environments }}"
+          elif [[ $is_production_branch == true ]] && [[ -z $is_production_synced_with_develop ]]; then
+              echo "::error::Cannot deploy out of sync production branch to production environments: ${{ inputs.production_environments }}"
           echo "deploy_environments=[${deploy_environments}]" >> $GITHUB_OUTPUT
           echo "${deploy_environments}"
             

@@ -18,8 +18,8 @@ jobs:
         run: |
           deploy_environments=[]
           is_develop_branch=$([[ "${{ github.ref }}" == refs/heads/develop ]] && echo true || echo false)
-          is_production_branch=$([[ "${{ github.ref }}" == refs/heads/production ]] && echo true || echo false)
-          is_production_synced_with_develop=$(git cherry origin/production origin/develop)
+          is_production_branch=$([[ "${{ github.ref }}" == refs/heads/main ]] && echo true || echo false)
+          is_production_synced_with_develop=$(git cherry origin/main origin/develop)
 
           echo "Is develop: ${is_develop_branch}"
           echo "Is prod: ${is_production_branch}"

@@ -1,11 +1,37 @@
-name: Update requirements
+name: My Check
 
 on:
   push:
 
 jobs:
-
+  
   check: 
-    uses: ./.github/workflows/check.yml
-      
-        
+    runs-on: ubuntu-latest
+    steps: 
+      - name: get deploy environments
+        id: deployEnv
+        run: |
+          deploy_environments=[]
+          is_develop_branch="${{ github.ref }} == refs/heads/develop"
+          is_production_branch="${{ github.ref }} == refs/heads/production"
+          is_production_synced_with_develop="-z `git cherry origin/production origin/develop`"
+
+          echo "Is develop: ${is_develop_branch}"
+          echo "Is prod: ${is_production_branch}"
+          echo "Is synced: ${is_production_synced_with_develop}"
+          
+          deploy_environments=""
+          if [[ ${is_develop_branch} ]]; then
+            deploy_environments="staging"
+          elif [[ ${is_production_branch} ]]; then
+            if [[ ${is_production_synced_with_develop} ]]; then
+              echo "::error::Cannot deploy out of sync production branch to production environments: ${{ inputs.production_environments }}"
+              exit 1
+            else
+              deploy_environments="${{ inputs.production_environments }}"
+            fi
+          fi
+          echo "deploy_environments=[${deploy_environments}]" >> $GITHUB_OUTPUT
+      - name: Echo deploy environments
+        run: echo "Deploy environments: ${{ steps.deployEnv.outputs.deploy_environments }}"
+            

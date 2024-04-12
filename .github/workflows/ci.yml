@@ -32,6 +32,5 @@ jobs:
             fi
           fi
           echo "deploy_environments=[${deploy_environments}]" >> $GITHUB_OUTPUT
-      - name: Echo deploy environments
-        run: echo "Deploy environments: ${{ steps.deployEnv.outputs.deploy_environments }}"
+          echo "${deploy_environments}"
             

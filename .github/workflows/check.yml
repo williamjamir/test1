@@ -23,7 +23,7 @@ jobs:
           
       - name: Install poetry
         if: ${{ hashFiles('poetry.lock') != '' }} && steps.cached-poetry.outputs.cache-hit != 'true'
-        uses: snok/install-poetry@v1.3.4
+        uses: snok/install-poetry@v1.4.1
         with: 
           virtualenvs-create: false
           

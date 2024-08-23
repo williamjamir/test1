@@ -5,8 +5,8 @@
   ],
   "packageRules": [
       {
-      "matchDepNames": ["prefect"],
-      "minimumReleaseAge": "30 days",
+      "matchDepNames": ["aiocache"],
+      "enabled": false,
       
     },
   ]

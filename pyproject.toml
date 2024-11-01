@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.11"
 [tool.poetry.dependencies.aiocache]
 git = "https://github.com/aio-libs/aiocache.git"
-rev = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
+rev = "5cb51ba07902581c3acc21ec791e42ecd9093936"
 extras = [
     "redis",
 ]

@@ -20,8 +20,8 @@ redis = ["redis (>=4.2.0)"]
 [package.source]
 type = "git"
 url = "https://github.com/aio-libs/aiocache.git"
-reference = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
-resolved_reference = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
+reference = "5cb51ba07902581c3acc21ec791e42ecd9093936"
+resolved_reference = "5cb51ba07902581c3acc21ec791e42ecd9093936"
 
 [[package]]
 name = "async-timeout"
@@ -55,4 +55,4 @@ ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==20.0.1)", "requests (>=2.26.0)"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "cbef314abef93b6eca700c14b06df55db4f9fa5c4857546d671f91b32b3622bb"
+content-hash = "0d0345425866c05138744323d5fd35fdf438af14d8b7a55d997f77f4b8258256"

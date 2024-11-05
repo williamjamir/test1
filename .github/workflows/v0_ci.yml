@@ -1,0 +1,17 @@
+name: Test2
+
+on:
+  push:
+    branches: [ prefect2 ]
+  pull_request:
+    branches: [ prefect2 ]
+
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hi
+        run: | 
+          echo "HI from prefect2"
+          

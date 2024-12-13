@@ -5,23 +5,23 @@ name = "aiocache"
 version = "1.0.0a0"
 description = "multi backend asyncio cache"
 optional = false
-python-versions = "*"
+python-versions = ">=3.9"
 files = []
 develop = false
 
 [package.dependencies]
-redis = {version = ">=4.2.0", optional = true, markers = "extra == \"redis\""}
+redis = {version = ">=5", optional = true, markers = "extra == \"redis\""}
 
 [package.extras]
 memcached = ["aiomcache (>=0.5.2)"]
 msgpack = ["msgpack (>=0.5.5)"]
-redis = ["redis (>=4.2.0)"]
+redis = ["redis (>=5)"]
 
 [package.source]
 type = "git"
 url = "https://github.com/aio-libs/aiocache.git"
-reference = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
-resolved_reference = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
+reference = "7a6fe3a85f97561c1a01a103b73e10af7165bc6a"
+resolved_reference = "7a6fe3a85f97561c1a01a103b73e10af7165bc6a"
 
 [[package]]
 name = "async-timeout"
@@ -55,4 +55,4 @@ ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==20.0.1)", "requests (>=2.26.0)"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "cbef314abef93b6eca700c14b06df55db4f9fa5c4857546d671f91b32b3622bb"
+content-hash = "8168ba87630175760c61130ac43f2feb30a29691e0695c140a24abaffe25cf14"

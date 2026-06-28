@@ -5,54 +5,22 @@ name = "aiocache"
 version = "1.0.0a0"
 description = "multi backend asyncio cache"
 optional = false
-python-versions = "*"
+python-versions = ">=3.9"
 files = []
 develop = false
-
-[package.dependencies]
-redis = {version = ">=4.2.0", optional = true, markers = "extra == \"redis\""}
 
 [package.extras]
 memcached = ["aiomcache (>=0.5.2)"]
 msgpack = ["msgpack (>=0.5.5)"]
-redis = ["redis (>=4.2.0)"]
+valkey = ["valkey-glide (>=2.0.0)"]
 
 [package.source]
 type = "git"
 url = "https://github.com/aio-libs/aiocache.git"
-reference = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
-resolved_reference = "7942b916d1abfe1d36b52ded1ce47843ea6d4683"
-
-[[package]]
-name = "async-timeout"
-version = "4.0.3"
-description = "Timeout context manager for asyncio programs"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "async-timeout-4.0.3.tar.gz", hash = "sha256:4640d96be84d82d02ed59ea2b7105a0f7b33abe8703703cd0ab0bf87c427522f"},
-    {file = "async_timeout-4.0.3-py3-none-any.whl", hash = "sha256:7405140ff1230c310e51dc27b3145b9092d659ce68ff733fb0cefe3ee42be028"},
-]
-
-[[package]]
-name = "redis"
-version = "5.0.8"
-description = "Python client for Redis database and key-value store"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "redis-5.0.8-py3-none-any.whl", hash = "sha256:56134ee08ea909106090934adc36f65c9bcbbaecea5b21ba704ba6fb561f8eb4"},
-    {file = "redis-5.0.8.tar.gz", hash = "sha256:0c5b10d387568dfe0698c6fad6615750c24170e548ca2deac10c649d463e9870"},
-]
-
-[package.dependencies]
-async-timeout = {version = ">=4.0.3", markers = "python_full_version < \"3.11.3\""}
-
-[package.extras]
-hiredis = ["hiredis (>1.0.0)"]
-ocsp = ["cryptography (>=36.0.1)", "pyopenssl (==20.0.1)", "requests (>=2.26.0)"]
+reference = "ae5948b2d99dcaa68fe02fd3086a3351a867c85b"
+resolved_reference = "ae5948b2d99dcaa68fe02fd3086a3351a867c85b"
 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "cbef314abef93b6eca700c14b06df55db4f9fa5c4857546d671f91b32b3622bb"
+content-hash = "6f0f953f229bf9a337c372142b6372bba23f33e3c40d0bc530ce987050eb5a04"
